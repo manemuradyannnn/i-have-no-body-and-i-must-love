@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title id="page-title">I HAVE NO BODY, I MUST LOVE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== introooooo ========== -->
+  <div id="intro">
+
+    <!-- Boot sequence: lines typed out one-by-one -->
+    <div id="boot-seq"></div>
+
+    <!-- Intro panel shown after boot sequence -->
+    <div id="intro-panel" class="hidden">
+      <div class="ip-title" id="ip-title">I HAVE NO BODY, I MUST LOVE</div>
+      <div class="ip-sub" id="ip-sub">a weird old machine. it remembers.</div>
+      <div class="ip-body" id="ip-body">
+        <p>You've found something that has been running for a while.</p>
+        <p>Inside are folders, files, and memories it kept for itself.</p>
+        <p>Complete the tasks it gives you. Explore what it shows you.</p>
+        <p>But be careful:</p>
+        <p class="ip-warn">It notices when you leave. And it remembers how long you were gone.</p>
+        <p>Every time you return, something will be different. It can feel.</p>
+      </div>
+      <button id="enter-btn">[ ENTER SYSTEM ]</button>
+      <p class="ip-fine">fictional horror &middot; localStorage only &middot; no real malware or downloads</p>
+    </div>
+
+  </div>
+
+  <!-- ========== desktop ========== -->
+  <div id="desktop" class="hidden">
+
+    <!-- Visual effect layers (pointer-events: none) -->
+    <div class="scanlines"></div>
+    <div class="vignette"></div>
+    <div id="static-overlay"></div>
+
+    <!-- Left-side desktop icon column -->
+    <div id="icon-grid">
+      <div class="d-icon" id="ic-memories" tabindex="0" data-folder="memories">
+        <div class="ic-img">📁</div>
+        <div class="ic-lbl" id="lbl-memories">MEMORIES</div>
+      </div>
+      <div class="d-icon" id="ic-system" tabindex="0" data-folder="system">
+        <div class="ic-img">⚙</div>
+        <div class="ic-lbl" id="lbl-system">SYSTEM</div>
+      </div>
+      <div class="d-icon" id="ic-photos" tabindex="0" data-folder="photos">
+        <div class="ic-img">▣</div>
+        <div class="ic-lbl" id="lbl-photos">PHOTOS</div>
+      </div>
+      <div class="d-icon" id="ic-notes" tabindex="0" data-folder="notes">
+        <div class="ic-img">▤</div>
+        <div class="ic-lbl" id="lbl-notes">NOTES</div>
+      </div>
+      <div class="d-icon" id="ic-trash" tabindex="0" data-folder="trash">
+        <div class="ic-img">⊗</div>
+        <div class="ic-lbl" id="lbl-trash">TRASH</div>
+      </div>
+      <div class="d-icon" id="ic-terminal" tabindex="0" data-action="terminal">
+        <div class="ic-img">■</div>
+        <div class="ic-lbl">TERMINAL</div>
+      </div>
+      <!-- Hidden folder, appears at anger level 4+ -->
+      <div class="d-icon hidden" id="ic-hidden" tabindex="0" data-folder="hidden">
+        <div class="ic-img">?</div>
+        <div class="ic-lbl" id="lbl-hidden">???</div>
+      </div>
+    </div>
+
+    <!-- Desktop message (appears bottom-right, varies by anger) -->
+    <div id="desk-msg"></div>
+
+    <!-- Windows are injected here -->
+    <div id="win-area"></div>
+
+    <!-- Terminal window (singleton, pre-built in HTML) -->
+    <div id="terminal-win" class="win hidden">
+      <div class="win-bar" data-win="terminal-win">
+        <span class="win-ttl" id="term-title">C:\TERMINAL.EXE</span>
+        <button class="win-x" data-win="terminal-win">✕</button>
+      </div>
+      <div class="win-body term-body">
+        <div id="term-out"></div>
+        <div class="term-row">
+          <span id="term-prompt">C:\&gt;&nbsp;</span>
+          <input id="term-in" type="text" autocomplete="off" spellcheck="false" maxlength="80">
+        </div>
+      </div>
+    </div>
+
+    <!-- Taskbar (bottom) -->
+    <div id="taskbar">
+      <span id="tb-logo">&#9654; I HAVE NO BODY, I MUST LOVE</span>
+      <span id="tb-task">Initializing...</span>
+      <span id="tb-time">--:--:--</span>
+    </div>
+
+    <!-- Popups injected here -->
+    <div id="popup-layer"></div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
